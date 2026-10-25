@@ -1,0 +1,111 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Koalitionsrechner | BDRS</title><style>
+:root{font-family:Arial,Helvetica,sans-serif;color-scheme:dark;--bg:#090c15;--surface:#111622;--card:#151b28;--text:#f5f7fc;--muted:#99a6c0;--border:#2b3345;--empty:#1c2330;--accent:#7fa9ed;--shadow:0 12px 35px #0002}html[data-theme=light]{color-scheme:light;--bg:#f4f6fa;--surface:#fff;--card:#f3f5fa;--text:#1a2230;--muted:#566477;--border:#d5dbe5;--empty:#e0e4eb;--accent:#1758a6;--shadow:0 12px 35px #14284213}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);transition:background .35s,color .35s}button{font:inherit;cursor:pointer}.app{width:min(1040px,calc(100% - 34px));margin:0 auto;padding:25px 0 45px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.circle-btn{width:39px;height:39px;display:grid;place-items:center;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:50%;font-weight:700;font-size:21px;transition:background .2s,transform .2s,border-color .2s}.circle-btn:hover{transform:translateY(-2px);border-color:var(--accent)}.top-actions{display:flex;gap:10px}.headline{text-align:center;margin:9px 0 12px}.headline h1{font-size:clamp(21px,3vw,31px);margin:0 0 8px;letter-spacing:-.02em}.headline p{color:var(--muted);font-size:13px;margin:0}.diagram{width:min(800px,100%);margin:8px auto 0;position:relative}.diagram svg{width:100%;height:auto;display:block;overflow:visible}.seat{cursor:pointer;stroke:var(--bg);stroke-width:4;stroke-linejoin:round;transition:fill .3s,opacity .25s,filter .25s}.seat:hover{filter:brightness(1.17)}.seat{transition:fill .35s,opacity .35s,filter .2s}.threshold-mark{stroke:var(--text);stroke-width:2;stroke-dasharray:4 4;opacity:.65;pointer-events:none}.diagram.reflow .seat{animation:chartEnter .36s ease both}@keyframes chartEnter{from{opacity:.35;filter:brightness(1.4)}to{opacity:1;filter:brightness(1)}}.axis{stroke:var(--text);stroke-width:1.4;opacity:.75;pointer-events:none}.center{margin-top:-32px;text-align:center;position:relative;pointer-events:none}.count{font-size:26px;font-weight:700}.message{font-size:14px;margin-top:7px}.message.good{color:#20d96e}.message.bad{color:#ff7786}.party-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:36px auto 20px}.party{min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-align:left;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:9px 12px 9px 15px;position:relative;transition:transform .18s,background .25s,border-color .2s}.party:hover{transform:translateY(-2px);border-color:var(--accent)}.party:before{content:"";position:absolute;top:7px;bottom:7px;left:5px;width:4px;background:var(--party)}.party.selected{background:color-mix(in srgb,var(--party) 20%,var(--surface));border-color:var(--party)}.party{animation:partyArrive .3s ease both}@keyframes partyArrive{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.party strong{font-size:14px}.party small{font-size:12px;display:block;margin-top:2px}.symbol{font-size:17px;font-weight:700}footer{border-top:1px solid var(--border);padding-top:19px;display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:12px}.reset,.back{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:10px 15px;transition:background .2s}.reset:hover,.back:hover{background:var(--card)}.page{animation:fade .28s ease}.hidden{display:none}@keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.info{max-width:900px;margin:28px auto 0}.info h1{font-size:30px}.info h2{font-size:21px;margin:30px 0 10px}.info p,.info li{color:var(--muted);line-height:1.65}.info table{border-collapse:collapse;width:100%;background:var(--surface);font-size:14px}.info th,.info td{border-bottom:1px solid var(--border);padding:12px 10px;text-align:left}.info th{background:var(--card)}.info .notice{background:var(--surface);border-left:3px solid var(--accent);padding:13px 17px;line-height:1.65;color:var(--muted);margin:18px 0}.coalitions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.coalition{border:1px solid var(--border);background:var(--surface);padding:14px}.coalition b{display:block;margin-bottom:5px}.coalition span{color:var(--muted);font-size:13px}.info details{border-bottom:1px solid var(--border);padding:13px 0}.info summary{cursor:pointer;font-weight:600}.info a{color:var(--accent)}.info-link{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:11px 16px;margin:10px 0 6px;font-size:14px;text-decoration:none;transition:transform .2s,border-color .2s}.info-link:hover{transform:translateY(-2px);border-color:var(--accent)}.formula{font-size:clamp(20px,3vw,29px);font-weight:700;text-align:center;padding:22px;margin:20px 0;border:1px solid var(--border);background:var(--surface)}.percent-example{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.percent-example>div{border:1px solid var(--border);background:var(--surface);padding:20px}.percent-example strong{display:block;font-size:23px;margin-bottom:5px}.percent-example span{color:var(--muted);font-size:13px}@media(max-width:700px){.percent-example{grid-template-columns:1fr}}.provider{margin:34px 0 20px;border-top:1px solid var(--border);padding:20px 0;display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:13px}.provider strong{color:var(--text);font-size:14px}@media(max-width:700px){.party-grid{grid-template-columns:repeat(2,1fr);gap:8px;margin-top:24px}.center{margin-top:-15px}.coalitions{grid-template-columns:1fr}.headline h1{font-size:22px}.app{padding-top:13px}footer{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body><div class="app"><nav class="top"><button class="circle-btn" id="infoBtn" aria-label="Informationen öffnen" title="Informationen">i</button><div class="top-actions"><button class="circle-btn" id="themeBtn" aria-label="Hell-/Dunkelmodus wechseln" title="Hell-/Dunkelmodus">☀</button></div></nav>
+<main id="calculatorPage" class="page"><div class="headline"><h1 id="coalitionTitle">Bitte wählen Sie Parteien aus</h1><p>Koalitionsrechner · Parlament mit 41 Sitzen · absolute Mehrheit ab 21</p></div><div class="diagram"><svg id="parliament" viewBox="0 0 800 415" role="img" aria-label="Interaktiver parlamentarischer Halbkreis"></svg></div><div class="center" aria-live="polite"><div class="count" id="seatCount">0/41</div><div class="message" id="majority">Absolute Mehrheit ab 21</div></div><div class="party-grid" id="partyGrid"></div><footer><span>41 Sitze insgesamt · 26 Listenplätze + 15 Direktmandate · Bereitgestellt von der BDRS</span><button class="reset" id="resetBtn">Auswahl zurücksetzen</button></footer></main>
+<main id="infoPage" class="page hidden"><section class="info">
+<button class="back" id="backBtn">← Zurück zum Rechner</button>
+<h1>Sitzverteilung und Koalitionsmöglichkeiten</h1>
+<p>Das Parlament umfasst 41 Mandate. Aus der Sitzverteilung ergeben sich verschiedene rechnerische Möglichkeiten zur Bildung parlamentarischer Mehrheiten. Die vorliegende Übersicht dokumentiert die Sitzstärken und die daraus folgenden Mehrheitsverhältnisse.</p>
+<div class="notice"><strong>Parlamentarische Grundlage:</strong> 41 Sitze insgesamt, darunter 26 Listenplätze und 15 Direktmandate. Die absolute Mehrheit wird mit mindestens 21 Sitzen erreicht. Die dargestellten Ergebnisse beruhen ausschließlich auf der festgelegten Sitzverteilung.</div>
+<h2>Sitzverteilung im Parlament</h2>
+<p>Die nachstehende Übersicht zeigt die Mandatszahlen der acht vertretenen Parteien. Der Sitzanteil bezeichnet den prozentualen Anteil der jeweiligen Fraktion an sämtlichen 41 Mandaten.</p>
+<table><thead><tr><th>Partei</th><th>Sitze</th><th>Sitzanteil</th></tr></thead><tbody id="infoSeats"></tbody></table>
+<h2>Rechnerische Mehrheitsverhältnisse</h2>
+<p>Eine absolute Mehrheit setzt mehr als die Hälfte der gesetzlichen Gesamtsitzzahl voraus. Bei 41 Sitzen liegt die Mehrheitsschwelle bei 21. Koalitionen mit 20 oder weniger Sitzen besitzen demnach keine absolute Mehrheit. Ein einzelner Parteiaustritt kann über den Fortbestand einer Mehrheit entscheiden.</p>
+<h2>Minimale Mehrheitskoalitionen</h2>
+<p>Eine minimale Mehrheitskoalition ist ein Parteienbündnis, in dem sämtliche Koalitionspartner zur Erreichung der absoluten Mehrheit notwendig sind. Sobald eine beteiligte Partei ausscheidet, fällt die Sitzsumme unter die Mehrheitsschwelle. Die folgenden Bündnisse werden vollständig und automatisch aus der aktuellen Sitzverteilung berechnet.</p>
+<div class="coalitions" id="minimumCoalitions"></div>
+<p>Die rechnerische Zusammenstellung stellt weder eine Wahrscheinlichkeitsprognose noch eine Bewertung der politischen Vereinbarkeit einzelner Parteien dar.</p>
+<h2>Aufbau der Sitzdarstellung</h2>
+<p>Der parlamentarische Halbkreis zeigt die Sitzanteile der Parteien proportional zu ihrer Mandatszahl. Die farblich hervorgehobenen Bereiche entsprechen der jeweils betrachteten Koalition. Die übrigen Mandate bleiben in einer neutralen Hintergrundfarbe dargestellt. Die Mehrheitsschwelle und die Anzahl fehlender beziehungsweise überschüssiger Sitze werden fortlaufend aus der gewählten Zusammenstellung berechnet.</p>
+<h2>Listenplätze und Direktmandate</h2>
+<p>Die zugrunde liegende Zusammensetzung besteht aus 26 Listenplätzen und 15 Direktmandaten. Die Sitzverteilung der Parteien berücksichtigt beide Mandatsarten bereits. Der Koalitionsrechner verteilt daher keine Stimmen auf neue Mandate, sondern ermittelt Mehrheiten anhand des feststehenden parlamentarischen Endergebnisses.</p>
+<h2>Weiterführende Informationen</h2><p>Die Bedeutung von Stimmenanteilen und Sitzmehrheiten wird in einem gesonderten Beitrag erläutert.</p><button class="info-link" id="percentLink">Wie viel Prozent braucht eine Koalition? →</button><h2>Häufige Fragen</h2>
+<details><summary>Wie viele Sitze umfasst das Parlament?</summary><p>Die Gesamtsitzzahl beträgt 41 Mandate. Darunter befinden sich 26 Listenplätze und 15 Direktmandate.</p></details>
+<details><summary>Wie viele Sitze sind für eine absolute Mehrheit erforderlich?</summary><p>Mindestens 21 Sitze. Dies entspricht der kleinsten ganzen Zahl oberhalb der Hälfte aller 41 Mandate.</p></details>
+<details><summary>Was unterscheidet eine Mehrheit von einer minimalen Mehrheit?</summary><p>Eine Mehrheitskoalition verfügt über mindestens 21 Sitze. Bei einer minimalen Mehrheitskoalition ist jeder Partner notwendig, um diese Schwelle zu erreichen.</p></details>
+<details><summary>Welche Bedeutung besitzen die Parteifarben?</summary><p>Die Farben dienen der eindeutigen Zuordnung der Parteien im parlamentarischen Halbkreis. Ihre Darstellung beeinflusst die Berechnung nicht.</p></details>
+<details><summary>Werden politische Übereinstimmungen berücksichtigt?</summary><p>Nein. Die Berechnung bildet ausschließlich arithmetische Sitzmehrheiten ab. Inhaltliche Positionen, Koalitionsausschlüsse und Verhandlungsergebnisse bleiben unberücksichtigt.</p></details>
+<details><summary>Werden neue Mandate aus Stimmenanteilen berechnet?</summary><p>Nein. Grundlage sind die vorgegebenen 41 Mandate. Die Umrechnung von Wählerstimmen in Sitze ist nicht Bestandteil dieses Rechners.</p></details>
+<div class="provider"><strong>Bereitgestellt durch die BDRS</strong><span>Bundesvereinigung der Deutschen Rüstungs- und Sicherheitsindustrie</span><span>Informationen zur Sitzverteilung und zu rechnerischen Koalitionsmöglichkeiten.</span></div>
+<button class="back" id="bottomBack">← Zurück zum Rechner</button>
+</section></main>
+<main id="percentPage" class="page hidden"><section class="info">
+<button class="back" id="percentBack">← Zurück zu den Informationen</button>
+<h1>Wie viel Prozent braucht eine Koalition?</h1>
+<p>Für eine absolute parlamentarische Mehrheit sind mehr als die Hälfte der Sitze erforderlich. Ein Stimmenanteil von mehr als 50 Prozent ist dafür nicht zwangsläufig notwendig. Entscheidend ist die tatsächliche Sitzverteilung nach der Wahl.</p>
+<div class="notice"><strong>Eine feste Mindestzahl an Prozentpunkten der Wählerstimmen lässt sich aus der Sitzverteilung allein nicht bestimmen.</strong> Im Parlament mit 41 Mandaten liegt die absolute Mehrheit bei 21 Sitzen. Dies entspricht rund 51,2 Prozent aller Mandate.</div>
+<h2>Warum Stimmenanteile und Sitzanteile voneinander abweichen</h2>
+<p>Die Wahlstimmen einer Partei und ihr Anteil an den Parlamentssitzen müssen nicht übereinstimmen. Maßgeblich sind das jeweils geltende Wahlsystem, etwaige Zugangsschwellen, die Behandlung von Direktmandaten sowie die Regeln zur Verteilung der Listenplätze.</p>
+<p>Werden Stimmen für Parteien, die eine geltende Zugangsschwelle nicht erreichen, bei der Sitzverteilung nicht berücksichtigt, entfallen auf die übrigen Parteien im Verhältnis mehr Sitze als ihrem ursprünglichen Stimmenanteil entspricht.</p>
+<p>Bei einer beispielhaften Zugangsschwelle von fünf Prozent und insgesamt acht Prozent der Stimmen für nicht berücksichtigte Parteien werden die proportional vergebenen Mandate auf die übrigen 92 Prozent der Stimmen verteilt. Ein Bündnis mit 47 Prozent aller Stimmen würde in einer rein proportionalen Verteilung der berücksichtigten Stimmen rechnerisch etwa 51,1 Prozent erreichen. Rundungsvorschriften, Direktmandate und andere Regelungen können das tatsächliche Ergebnis verändern.</p>
+<p><strong>Grundsatz:</strong> Eine feste Umrechnung von Stimmenprozenten in die erforderliche Mandatszahl ist ohne Angaben zum Wahlsystem und zum vollständigen Wahlergebnis nicht möglich.</p>
+<h2>Die absolute Mehrheit berechnen</h2>
+<div class="formula">Mehrheit = ⌊Gesamtsitze ÷ 2⌋ + 1</div>
+<div class="percent-example"><div><strong>41</strong><span>Sitze insgesamt</span></div><div><strong>20,5</strong><span>Hälfte der Sitze</span></div><div><strong>21</strong><span>Erforderliche Mehrheit</span></div></div>
+<p>Im betrachteten Parlament ergibt sich die absolute Mehrheit aus 41 ÷ 2 = 20,5. Die kleinste ganze Sitzzahl oberhalb dieser Hälfte beträgt 21. Eine Koalition mit 20 Sitzen liegt unter der Mehrheitsschwelle; ein Bündnis mit 21 Sitzen erreicht sie genau.</p>
+<h2>Absolute Mehrheit, relative Mehrheit und Minderheitsregierung</h2>
+<p>Eine absolute Mehrheit besteht, sobald ein Bündnis mehr als die Hälfte sämtlicher Mandate besitzt. Eine relative Mehrheit bedeutet lediglich, dass eine Partei oder ein Bündnis über mehr Sitze als jede andere einzelne Gruppierung verfügt. Daraus folgt nicht automatisch eine absolute Mehrheit.</p>
+<p>Eine Minderheitsregierung verfügt nicht selbst über die absolute Mehrheit der Parlamentssitze. Für einzelne Entscheidungen kann sie auf Unterstützung weiterer Abgeordneter angewiesen sein. Welche Stimmenmehrheit bei bestimmten Abstimmungen erforderlich ist, bestimmt das einschlägige parlamentarische Regelwerk.</p>
+<h2>Mehrheitsschwelle des Parlaments</h2>
+<table><thead><tr><th>Parlament</th><th>Sitze</th><th>Mehrheit ab</th><th>Sitzanteil</th></tr></thead><tbody><tr><td>Parlament (aktuelle Sitzverteilung)</td><td>41</td><td>21</td><td>51,2 %</td></tr></tbody></table>
+<p>Die Mehrheitsschwelle betrifft die Sitze und nicht unmittelbar die Wahlstimmen. Aus der Anzahl von 26 Listenplätzen und 15 Direktmandaten allein kann kein konkreter erforderlicher Stimmenanteil für eine Regierungskoalition abgeleitet werden.</p>
+<h2>Welche Mehrheiten sind rechnerisch möglich?</h2>
+<p>Die vorhandenen acht Parteien verfügen zusammen über 41 Mandate. Der Koalitionsrechner ermittelt die Summe aller ausgewählten Mandate und stellt dieser die Schwelle von 21 Sitzen gegenüber. Wird die Grenze erreicht, besteht eine rechnerische absolute Mehrheit.</p>
+<p>Eine minimale Mehrheitskoalition ist ein Bündnis, bei dem jede beteiligte Partei für das Überschreiten der Mehrheitsschwelle benötigt wird. Die Anzahl und Zusammensetzung dieser Bündnisse ergeben sich aus der aktuellen Mandatsverteilung; politische Übereinstimmungen werden dabei nicht bewertet.</p>
+<h2>Grundlage der Berechnung</h2>
+<p>Der Rechner verwendet das feststehende parlamentarische Endergebnis. Eine Neuberechnung der Sitzverteilung aus Stimmenanteilen oder Umfragen erfolgt nicht. Für konkrete Aussagen über die benötigten Stimmenprozente wären zusätzliche Angaben zum Wahlergebnis sowie zum gültigen Wahlrecht erforderlich.</p>
+<div class="provider"><strong>Bereitgestellt durch die BDRS</strong><span>Bundesvereinigung der Deutschen Rüstungs- und Sicherheitsindustrie</span><span>Informationen zu parlamentarischen Mehrheiten und Koalitionsmöglichkeiten.</span></div>
+<button class="back" id="percentCalculator">← Zum Koalitionsrechner</button>
+</section></main></div>
+<script>
+const parties=[{name:'RKP',seats:3,color:'#d34b90'},{name:'BJW',seats:3,color:'#7640a8'},{name:'SBD',seats:6,color:'#c63538'},{name:'CLB',seats:4,color:'#e18738'},{name:'CKU',seats:2,color:'#151515'},{name:'BFD',seats:4,color:'#efc83c'},{name:'Forum',seats:3,color:'#122b52'},{name:'NVP',seats:16,color:'#d9dde1'}];const chosen=new Set();const total=41,threshold=21;const $=id=>document.getElementById(id);const root=document.documentElement;
+function point(r,angle){return [400+r*Math.cos(angle),390-r*Math.sin(angle)]}function segmentPath(start,end){const ro=320,ri=190,a=point(ro,start),b=point(ro,end),c=point(ri,end),d=point(ri,start);return `M ${a[0]} ${a[1]} A ${ro} ${ro} 0 0 1 ${b[0]} ${b[1]} L ${c[0]} ${c[1]} A ${ri} ${ri} 0 0 0 ${d[0]} ${d[1]} Z`}
+const svgns='http://www.w3.org/2000/svg';function svg(tag,attrs={}){const e=document.createElementNS(svgns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
+function buildChart(){
+ const chart=$('parliament');
+ chart.innerHTML='';
+ const ordered=[...parties.map((p,i)=>({p,i}))].sort((a,b)=>{
+   const aa=chosen.has(a.i)?0:1,bb=chosen.has(b.i)?0:1;
+   return aa-bb||a.i-b.i;
+ });
+ let cursor=Math.PI;
+ const g=svg('g');
+ ordered.forEach(({p,i})=>{
+   const span=Math.PI*p.seats/total,start=cursor,end=cursor-span;
+   const path=svg('path',{d:segmentPath(start-.005,end+.005),class:'seat',tabindex:'0',role:'button','aria-label':`${p.name}: ${p.seats} Sitze`,'aria-pressed':String(chosen.has(i))});
+   path.dataset.idx=i;
+   path.style.fill=chosen.has(i)?p.color:'var(--empty)';
+   path.addEventListener('click',()=>toggle(i));
+   path.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(i)}});
+   const tt=svg('title');tt.textContent=`${p.name}: ${p.seats} Sitze`;path.append(tt);
+   g.append(path);cursor=end;
+ });
+ chart.append(g);
+ const angle=Math.PI-Math.PI*threshold/total;
+ const p1=point(180,angle),p2=point(327,angle);
+ chart.append(svg('line',{x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],class:'threshold-mark'}));
+ chart.append(svg('line',{x1:400,y1:25,x2:400,y2:200,class:'axis'}));
+ chart.parentElement.classList.remove('reflow');void chart.parentElement.offsetWidth;chart.parentElement.classList.add('reflow');
+}
+function toggle(i){chosen.has(i)?chosen.delete(i):chosen.add(i);render()}
+function render(){
+ const count=parties.reduce((s,p,i)=>s+(chosen.has(i)?p.seats:0),0);
+ const sel=parties.filter((_,i)=>chosen.has(i));
+ $('coalitionTitle').textContent=sel.length?sel.map(p=>p.name).join(' – '):'Bitte wählen Sie Parteien aus';
+ $('seatCount').textContent=`${count}/${total}`;
+ const m=$('majority');m.className='message '+(count>=threshold?'good':count?'bad':'');
+ m.textContent=count>=threshold?`✓ Absolute Mehrheit erreicht (${count-threshold} Sitze über der Mehrheitsschwelle)`:count?`✕ ${threshold-count} Sitze fehlen zur Mehrheit`:`Absolute Mehrheit ab ${threshold}`;
+ buildChart();
+ $('partyGrid').innerHTML=parties.map((p,i)=>`<button class="party ${chosen.has(i)?'selected':''}" style="--party:${p.color}" data-idx="${i}" aria-pressed="${chosen.has(i)}"><span><strong>${p.name}</strong><small>${p.seats} Sitze</small></span><span class="symbol">${chosen.has(i)?'×':'+'}</span></button>`).join('');
+ $('partyGrid').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>toggle(Number(b.dataset.idx))));
+}
+function infos(){const rows=[...parties].sort((a,b)=>b.seats-a.seats);$('infoSeats').innerHTML=rows.map(p=>`<tr><td>${p.name}</td><td>${p.seats}</td><td>${(100*p.seats/41).toLocaleString('de-DE',{maximumFractionDigits:1})} %</td></tr>`).join('');const combos=[];for(let mask=1;mask<(1<<parties.length);mask++){const s=parties.reduce((a,p,i)=>a+((mask>>i)&1?p.seats:0),0);if(s<threshold)continue;const picked=parties.filter((_,i)=>(mask>>i)&1);if(picked.every(p=>s-p.seats<threshold))combos.push({picked,s})}combos.sort((a,b)=>a.picked.length-b.picked.length||a.s-b.s);$('minimumCoalitions').innerHTML=combos.map(c=>`<div class="coalition"><b>${c.picked.map(p=>p.name).join(' + ')}</b><span>${c.s} Sitze · +${c.s-threshold} über Mehrheit</span></div>`).join('')}
+function showPage(name){
+ const ids={calculator:'calculatorPage',info:'infoPage',percent:'percentPage'};
+ Object.entries(ids).forEach(([key,id])=>$(id).classList.toggle('hidden',key!==name));
+ $('infoBtn').style.visibility=name==='calculator'?'visible':'hidden';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+$('infoBtn').onclick=()=>showPage('info');$('backBtn').onclick=$('bottomBack').onclick=()=>showPage('calculator');$('percentLink').onclick=()=>showPage('percent');$('percentBack').onclick=()=>showPage('info');$('percentCalculator').onclick=()=>showPage('calculator');$('resetBtn').onclick=()=>{chosen.clear();render()};const theme=localStorage.getItem('coalition_theme')||'dark';root.dataset.theme=theme;function themeIcon(){$('themeBtn').textContent=root.dataset.theme==='dark'?'☀':'☾'}themeIcon();$('themeBtn').onclick=()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('coalition_theme',root.dataset.theme);themeIcon()};render();infos();
+</script></body></html>
